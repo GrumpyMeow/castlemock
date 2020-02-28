@@ -264,7 +264,7 @@ public class HttpMessageSupport {
         BufferedReader bufferedReader = null;
         try {
 
-            if (connection.getResponseCode() >= OK_RESPONSE && connection.getResponseCode() < 500) {
+            if (connection.getResponseCode() >= OK_RESPONSE && connection.getResponseCode() < 400) {
                 // The connection returned a response with HTTP status 2xx.
                 // Use the input stream.
                 inputStream = connection.getInputStream();
@@ -281,7 +281,7 @@ public class HttpMessageSupport {
                 // The content is GZIP encoded.
                 // Create a decoder and parse the response.
                 final InputStream gzipStream = new GZIPInputStream(inputStream);
-                final Reader decoder = new InputStreamReader(gzipStream);
+                final Reader decoder = new InputStreamReader(gzipStream, characterEncoding);
                 bufferedReader = new BufferedReader(decoder);
             } else if(encodings.contains(ContentEncoding.DEFLATE)){
                 // The content is DEFLATE encoded.
@@ -290,8 +290,9 @@ public class HttpMessageSupport {
                 final Reader decoder = new InputStreamReader(inflaterInputStream, characterEncoding);
                 bufferedReader = new BufferedReader(decoder);
             } else {
-                // No encoding was used. Simply parse the response.
-                final InputStreamReader inputStreamReader = new InputStreamReader(inputStream, java.nio.charset.StandardCharsets.UTF_8);
+                // No content-encoding was given. Simply parse the response and expect UTF-8.
+                final InputStreamReader inputStreamReader = new InputStreamReader(inputStream,   (characterEncoding!=null) ? characterEncoding: "UTF-8" );
+                
                 bufferedReader = new BufferedReader(inputStreamReader);
             }
 
