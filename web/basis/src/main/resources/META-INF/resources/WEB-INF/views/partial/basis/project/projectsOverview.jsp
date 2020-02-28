@@ -43,25 +43,25 @@
                 <c:when test="${projects.size() > 0}">
                     <form:form action="${project_url}" method="POST" modelAttribute="projectModifierCommand">
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover sortable">
-                                <col width="0%">
-                                <col width="20%">
-                                <col width="10%">
-                                <col width="60%">
-                                <tr>
-                                    <th></th>
-                                    <th><spring:message code="general.projectoverview.column.project"/></th>
-                                    <th><spring:message code="general.projectoverview.column.type"/></th>
-                                    <th><spring:message code="general.projectoverview.column.description"/></th>
-                                </tr>
-                                <c:forEach items="${projects}" var="project" varStatus="loopStatus">
+                            <table class="table table-striped table-hover sortable">                                
+                                <thead>
                                     <tr>
-                                        <td><form:checkbox path="projects" name="${project.id}" value="${project.typeIdentifier.typeUrl}/${project.id}"/></td>
-                                        <td><a href="<c:url value="/web/${project.typeIdentifier.typeUrl}/project/${project.id}"/>">${project.name}</a></td>
-                                        <td>${project.typeIdentifier.type}</td>
-                                        <td>${project.description}</td>
+                                        <th class="col-narrow"></th>
+                                        <th style="width:20%"><spring:message code="general.projectoverview.column.project"/></th>
+                                        <th style="width:10%"><spring:message code="general.projectoverview.column.type"/></th>
+                                        <th style="width:60%"><spring:message code="general.projectoverview.column.description"/></th>
                                     </tr>
-                                </c:forEach>
+                                </thead>
+                                <tbody>
+                                    <c:forEach items="${projects}" var="project" varStatus="loopStatus">
+                                        <tr>
+                                            <td class="col-narrow"><form:checkbox path="projects" name="${project.id}" value="${project.typeIdentifier.typeUrl}/${project.id}"/></td>
+                                            <td><a href="<c:url value="/web/${project.typeIdentifier.typeUrl}/project/${project.id}"/>">${project.name}</a></td>
+                                            <td>${project.typeIdentifier.type}</td>
+                                            <td>${project.description}</td>
+                                        </tr>
+                                    </c:forEach>
+                                </tbody>
                             </table>
                         </div>
                         <div class="panel-buttons">

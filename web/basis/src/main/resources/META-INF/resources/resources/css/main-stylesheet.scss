@@ -524,3 +524,8 @@ select {
     opacity: 0.6;
     pointer-events: none;
 }
+
+.col-narrow {
+    white-space: nowrap;
+    width: auto;
+}
