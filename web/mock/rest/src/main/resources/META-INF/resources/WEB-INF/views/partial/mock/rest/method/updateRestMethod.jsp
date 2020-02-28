@@ -77,7 +77,7 @@
                 </tr>
                 <tr>
                     <td class="column1"><form:label path="simulateNetworkDelay"><spring:message code="rest.updatemethod.label.simulatenetworkdelay"/></form:label></td>
-                    <td class="column2"><span class="checkbox"><form:checkbox class="form-control" path="simulateNetworkDelay"/></span></td>
+                    <td class="column2"><span class="checkbox"><form:checkbox path="simulateNetworkDelay"/></span></td>
                 </tr>
                 <tr>
                     <td class="column1"><label path="name"><spring:message code="rest.updatemethod.label.networkdelay"/> (ms)</label></td>

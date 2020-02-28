@@ -58,7 +58,7 @@
                     </tr>
                     <tr>
                         <td class="column1"><form:label path="usingExpressions"><spring:message code="rest.createrestmockresponse.label.useexpressions"/></form:label></td>
-                        <td class="column2"><span class="checkbox"><form:checkbox class="form-control" path="usingExpressions"/></span></td>
+                        <td class="column2"><span class="checkbox"><form:checkbox path="usingExpressions"/></span></td>
                     </tr>
                 </table>
             </div>
