@@ -88,9 +88,9 @@
                                 <thead>
                                     <tr>
                                         <th class="col-narrow"></th>
-                                        <th><spring:message code="rest.restproject.column.application"/></th>
+                                        <th class="col-wide"><spring:message code="rest.restproject.column.application"/></th>
                                         <c:forEach items="${restMethodStatuses}" var="restMethodStatus">
-                                            <th><spring:message code="rest.type.restmethodstatus.${restMethodStatus}"/></th>
+                                            <th class="col-narrow"><spring:message code="rest.type.restmethodstatus.${restMethodStatus}"/></th>
                                         </c:forEach>
                                     </tr>
                                 </thead>
@@ -100,7 +100,7 @@
                                             <td><form:checkbox path="restApplicationIds" name="${restApplication.id}" value="${restApplication.id}"/></td>
                                             <td><a href="<c:url value="/web/rest/project/${restProject.id}/application/${restApplication.id}"/>">${restApplication.name}</a></td>
                                             <c:forEach items="${restMethodStatuses}" var="restMethodStatus">
-                                                <td>${restApplication.statusCount[restMethodStatus]}</td>
+                                                <td class="col-narrow">${restApplication.statusCount[restMethodStatus]}</td>
                                             </c:forEach>
                                         </tr>
                                     </c:forEach>

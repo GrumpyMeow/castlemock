@@ -47,9 +47,9 @@
                                 <thead>
                                     <tr>
                                         <th class="col-narrow"></th>
-                                        <th style="width:20%"><spring:message code="general.projectoverview.column.project"/></th>
-                                        <th style="width:10%"><spring:message code="general.projectoverview.column.type"/></th>
-                                        <th style="width:60%"><spring:message code="general.projectoverview.column.description"/></th>
+                                        <th class="col-narrow"><spring:message code="general.projectoverview.column.project"/></th>
+                                        <th class="col-narrow"><spring:message code="general.projectoverview.column.type"/></th>
+                                        <th class="col-wide"><spring:message code="general.projectoverview.column.description"/></th>
                                     </tr>
                                 </thead>
                                 <tbody>

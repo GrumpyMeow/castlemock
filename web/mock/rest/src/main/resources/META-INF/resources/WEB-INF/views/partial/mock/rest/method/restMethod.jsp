@@ -91,9 +91,9 @@
                                 <thead>
                                     <tr>
                                         <th class="col-narrow"></th>
-                                        <th style="width:50%"><spring:message code="rest.restmethod.column.responsename"/></th>
-                                        <th style="width:20%"><spring:message code="rest.restmethod.column.status"/></th>
-                                        <th style="width:20%"><spring:message code="rest.restmethod.column.httpstatuscode"/></th>
+                                        <th class="col-wide"><spring:message code="rest.restmethod.column.responsename"/></th>
+                                        <th class="col-narrow"><spring:message code="rest.restmethod.column.status"/></th>
+                                        <th class="col-narrow"><spring:message code="rest.restmethod.column.httpstatuscode"/></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -140,9 +140,9 @@
                             <thead>
                                 <tr>
                                     <th class="col-narrow"><spring:message code="rest.restmethod.column.id"/></th>
-                                    <th style="width:40%"><spring:message code="rest.restmethod.column.mockedresponse"/></th>
-                                    <th style="width:25%"><spring:message code="rest.restmethod.column.startdate"/></th>
-                                    <th style="width:25%"><spring:message code="rest.restmethod.column.enddate"/></th>
+                                    <th class="col-wide"><spring:message code="rest.restmethod.column.mockedresponse"/></th>
+                                    <th class="col-narrow"><spring:message code="rest.restmethod.column.startdate"/></th>
+                                    <th class="col-narrow"><spring:message code="rest.restmethod.column.enddate"/></th>
                                 </tr>
                             </thead>
                             <tbody>

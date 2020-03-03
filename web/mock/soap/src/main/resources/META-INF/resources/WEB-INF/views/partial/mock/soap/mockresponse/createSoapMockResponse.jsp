@@ -103,8 +103,8 @@
                                     <thead>
                                         <tr>
                                             <th class="col-narrow"></th>
-                                            <th><spring:message code="soap.createsoapmockresponse.column.headername"/></th>
-                                            <th><spring:message code="soap.createsoapmockresponse.column.headervalue"/></th>
+                                            <th class="col-narrow"><spring:message code="soap.createsoapmockresponse.column.headername"/></th>
+                                            <th class="col-narrow"><spring:message code="soap.createsoapmockresponse.column.headervalue"/></th>
                                         </tr>
                                     </thead>
                                 </table>
@@ -130,7 +130,7 @@
                                     <thead>
                                         <tr>
                                             <th class="col-narrow"></th>
-                                            <th><spring:message code="soap.createsoapmockresponse.column.xpath"/></th>
+                                            <th class="col-wide"><spring:message code="soap.createsoapmockresponse.column.xpath"/></th>
                                         </tr>
                                     </thead>
                                 </table>

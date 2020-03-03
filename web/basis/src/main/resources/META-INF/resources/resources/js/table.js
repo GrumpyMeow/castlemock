@@ -25,7 +25,8 @@ $(document).ready(function() {
             "info": false,
             "ordering": true,
             "searching": true,
-            "stateSave": true
+            "stateSave": true,
+            "autoWidth" : false
         }
     );
 });

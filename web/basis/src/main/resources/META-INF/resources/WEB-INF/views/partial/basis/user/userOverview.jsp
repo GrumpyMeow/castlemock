@@ -67,12 +67,12 @@
             <table class="table table-striped table-hover sortable">
                 <thead>
                     <tr>
-                        <th><spring:message code="general.useroverview.column.name"/></th>
-                        <th><spring:message code="general.useroverview.column.email"/></th>
-                        <th><spring:message code="general.useroverview.column.role"/></th>
-                        <th><spring:message code="general.useroverview.column.status"/></th>
-                        <th><spring:message code="general.useroverview.column.created"/></th>
-                        <th><spring:message code="general.useroverview.column.updated"/></th>
+                        <th class="col-narrow"><spring:message code="general.useroverview.column.name"/></th>
+                        <th class="col-wide"><spring:message code="general.useroverview.column.email"/></th>
+                        <th class="col-narrow"><spring:message code="general.useroverview.column.role"/></th>
+                        <th class="col-narrow"><spring:message code="general.useroverview.column.status"/></th>
+                        <th class="col-narrow"><spring:message code="general.useroverview.column.created"/></th>
+                        <th class="col-narrow"><spring:message code="general.useroverview.column.updated"/></th>
                     </tr>
                 </thead>
                 <tbody>

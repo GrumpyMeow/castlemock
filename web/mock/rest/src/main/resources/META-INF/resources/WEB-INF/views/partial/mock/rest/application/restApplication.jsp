@@ -54,10 +54,10 @@
                                 <thead>
                                     <tr>
                                         <th class="col-narrow"></th>
-                                        <th style="width:20%"><spring:message code="rest.restapplication.column.resource"/></th>
-                                        <th style="width:30%"><spring:message code="rest.restapplication.column.uri"/></th>
+                                        <th class="col-narrow"><spring:message code="rest.restapplication.column.resource"/></th>
+                                        <th class="col-wide"><spring:message code="rest.restapplication.column.uri"/></th>
                                         <c:forEach items="${restMethodStatuses}" var="restMethodStatus">
-                                            <th><spring:message code="rest.type.restmethodstatus.${restMethodStatus}"/></th>
+                                            <th class="col-narrow"><spring:message code="rest.type.restmethodstatus.${restMethodStatus}"/></th>
                                         </c:forEach>
                                     </tr>
                                 </thead>

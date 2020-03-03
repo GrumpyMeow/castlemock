@@ -65,10 +65,10 @@
                                 <thead>
                                     <tr>
                                         <th class="col-narrow"></th>
-                                        <th style="width:40%"><spring:message code="soap.soapport.column.name"/></th>
-                                        <th style="width:15%"><spring:message code="soap.soapport.column.method"/></th>
-                                        <th style="width:20%"><spring:message code="soap.soapport.column.responsestrategy"/></th>
-                                        <th style="width:15%"><spring:message code="soap.soapport.column.soapMockResponseStatus"/></th>
+                                        <th class="col-wide"><spring:message code="soap.soapport.column.name"/></th>
+                                        <th class="col-narrow"><spring:message code="soap.soapport.column.method"/></th>
+                                        <th class="col-narrow"><spring:message code="soap.soapport.column.responsestrategy"/></th>
+                                        <th class="col-narrow"><spring:message code="soap.soapport.column.soapMockResponseStatus"/></th>
                                     </tr>
                                 </thead>
                                 <tbody>

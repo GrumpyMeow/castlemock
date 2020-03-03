@@ -39,16 +39,16 @@
                 <thead>
                     <tr>
                         <th class="col-narrow"><spring:message code="general.eventoverview.column.id"/></th>
-                        <th style="width:30%"><spring:message code="general.eventoverview.column.resourcename"/></th>
-                        <th style="width:10%"><spring:message code="general.eventoverview.column.type"/></th>
-                        <th style="width:25%"><spring:message code="general.eventoverview.column.startdate"/></th>
-                        <th style="width:25%"><spring:message code="general.eventoverview.column.enddate"/></th>
+                        <th class="col-wide"><spring:message code="general.eventoverview.column.resourcename"/></th>
+                        <th class="col-narrow"><spring:message code="general.eventoverview.column.type"/></th>
+                        <th class="col-narrow"><spring:message code="general.eventoverview.column.startdate"/></th>
+                        <th class="col-narrow"><spring:message code="general.eventoverview.column.enddate"/></th>
                     </tr>
                 </thead>
                 <tbody>
                     <c:forEach items="${events}" var="event" varStatus="loopStatus">
                         <tr>
-                            <td class="col-narrow"><a href="<c:url value="/web/${event.typeIdentifier.typeUrl}/event/${event.id}"/>">${event.id}</a></td>
+                            <td><a href="<c:url value="/web/${event.typeIdentifier.typeUrl}/event/${event.id}"/>">${event.id}</a></td>
                             <td><a href="<c:url value="${event.resourceLink}"/>">${event.resourceName}</a></td>
                             <td><a href="<c:url value="/web/${event.typeIdentifier.typeUrl}/event/${event.id}"/>">${event.typeIdentifier.type}</a></td>
                             <td><a href="<c:url value="/web/${event.typeIdentifier.typeUrl}/event/${event.id}"/>">${event.startDate}</a></td>

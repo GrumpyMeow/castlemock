@@ -90,9 +90,9 @@
                                 <thead>
                                     <tr>
                                         <th class="col-narrow"><spring:message code="graphql.graphqlapplication.column.selected"/></th>
-                                        <th style="width:20%"><spring:message code="graphql.graphqlapplication.column.name"/></th>
-                                        <th style="width:10%"><spring:message code="graphql.graphqlapplication.column.type"/></th>
-                                        <th style="width:60%"><spring:message code="graphql.graphqlapplication.column.description"/></th>
+                                        <th class="col-narrow"><spring:message code="graphql.graphqlapplication.column.name"/></th>
+                                        <th class="col-narrow"><spring:message code="graphql.graphqlapplication.column.type"/></th>
+                                        <th class="col-wide"><spring:message code="graphql.graphqlapplication.column.description"/></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -144,9 +144,9 @@
                         <table class="table table-striped table-hover sortable">
                             <thead>
                                 <tr>
-                                    <th style="width:20%"><spring:message code="graphql.graphqlapplication.column.name"/></th>
-                                    <th style="width:10%"><spring:message code="graphql.graphqlapplication.column.type"/></th>
-                                    <th style="width:70%"><spring:message code="graphql.graphqlapplication.column.description"/></th>
+                                    <th class="col-narrow"><spring:message code="graphql.graphqlapplication.column.name"/></th>
+                                    <th class="col-narrow"><spring:message code="graphql.graphqlapplication.column.type"/></th>
+                                    <th class="col-wide"><spring:message code="graphql.graphqlapplication.column.description"/></th>
                                 </tr>
                             </thead>
                             <tbody>

@@ -86,9 +86,9 @@
                                     <thead>
                                         <tr>
                                             <th class="col-narrow"></th>
-                                            <th><spring:message code="soap.soapproject.column.port"/></th>
+                                            <th class="col-narrow"><spring:message code="soap.soapproject.column.port"/></th>
                                             <c:forEach items="${soapOperationStatuses}" var="soapOperationStatus">
-                                                <th><spring:message code="soap.type.soapoperationstatus.${soapOperationStatus}"/></th>
+                                                <th class="col-narrow"><spring:message code="soap.type.soapoperationstatus.${soapOperationStatus}"/></th>
                                             </c:forEach>
                                         </tr>
                                     </thead>
@@ -138,7 +138,7 @@
                                 <head>
                                     <tr>
                                         <th class="col-narrow"><spring:message code="soap.soapproject.column.type"/></th>
-                                        <th><spring:message code="soap.soapproject.column.resource"/></th>
+                                        <th class="col-wide"><spring:message code="soap.soapproject.column.resource"/></th>
                                     </tr>
                                 </head>
                                 <tbody>

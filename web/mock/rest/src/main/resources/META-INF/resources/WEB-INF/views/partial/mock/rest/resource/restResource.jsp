@@ -64,10 +64,10 @@
                                 <thead>
                                     <tr>
                                         <th class="col-narrow"></th>
-                                        <th style="width:30%"><spring:message code="rest.restresource.column.methodname"/></th>
-                                        <th style="width:10%"><spring:message code="rest.restresource.column.methodmethodtype"/></th>
-                                        <th style="width:10%"><spring:message code="rest.restresource.column.methodmethodstatus"/></th>
-                                        <th style="width:40%"><spring:message code="rest.restresource.column.methodforwardedendpoint"/></th>
+                                        <th class="col-narrow"><spring:message code="rest.restresource.column.methodname"/></th>
+                                        <th class="col-narrow"><spring:message code="rest.restresource.column.methodmethodtype"/></th>
+                                        <th class="col-narrow"><spring:message code="rest.restresource.column.methodmethodstatus"/></th>
+                                        <th class="col-wide"><spring:message code="rest.restresource.column.methodforwardedendpoint"/></th>
                                     </tr>
                                 </thead>
                                 <tbody>

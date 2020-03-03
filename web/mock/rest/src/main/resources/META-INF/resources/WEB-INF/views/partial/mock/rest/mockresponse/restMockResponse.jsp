@@ -120,8 +120,8 @@
                                     <thead>
                                         <tr>
                                             <th class="col-narrow"></th>
-                                            <th style="width:48%"><spring:message code="rest.restmockresponse.column.headername"/></th>
-                                            <th style="width:48%"><spring:message code="rest.restmockresponse.column.headervalue"/></th>
+                                            <th class="col-narrow"><spring:message code="rest.restmockresponse.column.headername"/></th>
+                                            <th class="col-wide"><spring:message code="rest.restmockresponse.column.headervalue"/></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -181,11 +181,11 @@
                                             <thead>
                                                 <tr>
                                                     <th class="col-narrow"></th>
-                                                    <th style="width:32.5%"><spring:message code="rest.restmockresponse.column.parameter"/></th>
-                                                    <th style="width:32.5%"><spring:message code="rest.restmockresponse.column.query"/></th>
-                                                    <th style="width:10%"><spring:message code="rest.restmockresponse.column.matchany"/></th>
-                                                    <th style="width:10%"><spring:message code="rest.restmockresponse.column.matchcase"/></th>
-                                                    <th style="width:10%"><spring:message code="rest.restmockresponse.column.matchregex"/></th>
+                                                    <th class="col-narrow"><spring:message code="rest.restmockresponse.column.parameter"/></th>
+                                                    <th class="col-narrow"><spring:message code="rest.restmockresponse.column.query"/></th>
+                                                    <th class="col-narrow"><spring:message code="rest.restmockresponse.column.matchany"/></th>
+                                                    <th class="col-narrow"><spring:message code="rest.restmockresponse.column.matchcase"/></th>
+                                                    <th class="col-narrow"><spring:message code="rest.restmockresponse.column.matchregex"/></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -227,7 +227,7 @@
                                     <thead>
                                         <tr>
                                             <th class="col-narrow"></th>
-                                            <th><spring:message code="rest.restmockresponse.column.xpath"/></th>
+                                            <th class="col-wide"><spring:message code="rest.restmockresponse.column.xpath"/></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -263,7 +263,7 @@
                                     <thead>
                                         <tr>
                                             <th class="col-narrow"></th>
-                                            <th><spring:message code="rest.restmockresponse.column.jsonpath"/></th>
+                                            <th class="col-wide"><spring:message code="rest.restmockresponse.column.jsonpath"/></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -316,11 +316,11 @@
                                     <thead>
                                         <tr>
                                             <th class="col-narrow"></th>
-                                            <th style="width:32.5%"><spring:message code="rest.restmockresponse.column.header"/></th>
-                                            <th style="width:32.5%"><spring:message code="rest.restmockresponse.column.query"/></th>
-                                            <th style="width:10%"><spring:message code="rest.restmockresponse.column.matchany"/></th>
-                                            <th style="width:10%"><spring:message code="rest.restmockresponse.column.matchcase"/></th>
-                                            <th style="width:10%"><spring:message code="rest.restmockresponse.column.matchregex"/></th>
+                                            <th class="col-narrow"><spring:message code="rest.restmockresponse.column.header"/></th>
+                                            <th class="col-wide"><spring:message code="rest.restmockresponse.column.query"/></th>
+                                            <th class="col-narrow"><spring:message code="rest.restmockresponse.column.matchany"/></th>
+                                            <th class="col-narrow"><spring:message code="rest.restmockresponse.column.matchcase"/></th>
+                                            <th class="col-narrow"><spring:message code="rest.restmockresponse.column.matchregex"/></th>
                                         </tr>
                                     </thead>
                                     <tbody>

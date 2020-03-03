@@ -33,8 +33,8 @@
                     <table class="table table-striped table-hover sortable">
                         <thead>
                             <tr>
-                                <th style="width: 50%;"><spring:message code="general.search.column.title"/></th>
-                                <th style="width: 50%;"><spring:message code="general.search.column.description"/></th>
+                                <th class="col-narrow"><spring:message code="general.search.column.title"/></th>
+                                <th class="col-wide"><spring:message code="general.search.column.description"/></th>
                             </tr>
                         </thead>
                         <tbody>

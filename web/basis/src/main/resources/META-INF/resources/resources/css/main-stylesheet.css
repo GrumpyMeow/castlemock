@@ -823,3 +823,15 @@ select {
 .disabled {
   opacity: 0.6;
   pointer-events: none; }
+
+.col-narrow {
+    white-space: nowrap;
+    width: auto;
+}
+
+.col-max {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
