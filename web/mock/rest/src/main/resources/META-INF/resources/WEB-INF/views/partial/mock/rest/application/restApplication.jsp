@@ -51,27 +51,28 @@
                     <form:form action="${rest_resource_update_url}/" method="POST"  modelAttribute="command">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover sortable">
-                                <col width="10%">
-                                <col width="20%">
-                                <col width="30%">
-                                <tr>
-                                    <th></th>
-                                    <th><spring:message code="rest.restapplication.column.resource"/></th>
-                                    <th><spring:message code="rest.restapplication.column.uri"/></th>
-                                    <c:forEach items="${restMethodStatuses}" var="restMethodStatus">
-                                        <th><spring:message code="rest.type.restmethodstatus.${restMethodStatus}"/></th>
-                                    </c:forEach>
-                                </tr>
-                                <c:forEach items="${restApplication.resources}" var="restResource" varStatus="loopStatus">
+                                <thead>
                                     <tr>
-                                        <td><form:checkbox path="restResourceIds" name="${restResource.id}" value="${restResource.id}"/></td>
-                                        <td><a href="<c:url value="/web/rest/project/${restProjectId}/application/${restApplication.id}/resource/${restResource.id}"/>">${restResource.name}</a></td>
-                                        <td><a href="<c:url value="/web/rest/project/${restProjectId}/application/${restApplication.id}/resource/${restResource.id}"/>">${restResource.uri}</a></td>
+                                        <th class="col-narrow"></th>
+                                        <th style="width:20%"><spring:message code="rest.restapplication.column.resource"/></th>
+                                        <th style="width:30%"><spring:message code="rest.restapplication.column.uri"/></th>
                                         <c:forEach items="${restMethodStatuses}" var="restMethodStatus">
-                                            <td>${restResource.statusCount[restMethodStatus]}</td>
+                                            <th><spring:message code="rest.type.restmethodstatus.${restMethodStatus}"/></th>
                                         </c:forEach>
                                     </tr>
-                                </c:forEach>
+                                </thead>
+                                <tbody>
+                                    <c:forEach items="${restApplication.resources}" var="restResource" varStatus="loopStatus">
+                                        <tr>
+                                            <td><form:checkbox path="restResourceIds" name="${restResource.id}" value="${restResource.id}"/></td>
+                                            <td><a href="<c:url value="/web/rest/project/${restProjectId}/application/${restApplication.id}/resource/${restResource.id}"/>">${restResource.name}</a></td>
+                                            <td><a href="<c:url value="/web/rest/project/${restProjectId}/application/${restApplication.id}/resource/${restResource.id}"/>">${restResource.uri}</a></td>
+                                            <c:forEach items="${restMethodStatuses}" var="restMethodStatus">
+                                                <td>${restResource.statusCount[restMethodStatus]}</td>
+                                            </c:forEach>
+                                        </tr>
+                                    </c:forEach>
+                                </tbody>
                             </table>
                         </div>
                         <div class="panel-buttons">

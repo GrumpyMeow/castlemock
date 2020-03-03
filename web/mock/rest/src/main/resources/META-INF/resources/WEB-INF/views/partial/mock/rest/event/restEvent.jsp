@@ -91,16 +91,20 @@
                                 <h3><span><spring:message code="rest.event.header.headers"/></span></h3>
                                 <div class="table-responsive">
                                     <table class="table table-striped table-hover sortable">
-                                        <tr>
-                                            <th><spring:message code="rest.event.column.headername"/></th>
-                                            <th><spring:message code="rest.event.column.headervalue"/></th>
-                                        </tr>
-                                        <c:forEach items="${event.request.httpHeaders}" var="httpHeader" varStatus="loopStatus">
+                                        <thead>
                                             <tr>
-                                                <td>${httpHeader.name}</td>
-                                                <td>${httpHeader.value}</td>
+                                                <th><spring:message code="rest.event.column.headername"/></th>
+                                                <th><spring:message code="rest.event.column.headervalue"/></th>
                                             </tr>
-                                        </c:forEach>
+                                        </thead>
+                                        <tbody>
+                                            <c:forEach items="${event.request.httpHeaders}" var="httpHeader" varStatus="loopStatus">
+                                                <tr>
+                                                    <td>${httpHeader.name}</td>
+                                                    <td>${httpHeader.value}</td>
+                                                </tr>
+                                            </c:forEach>
+                                        </tbody>
                                     </table>
                                 </div>
                             </c:when>
@@ -124,16 +128,20 @@
                                 <h3><span><spring:message code="rest.event.header.headers"/></span></h3>
                                 <div class="table-responsive">
                                     <table class="table table-striped table-hover sortable">
-                                        <tr>
-                                            <th><spring:message code="rest.event.column.headername"/></th>
-                                            <th><spring:message code="rest.event.column.headervalue"/></th>
-                                        </tr>
-                                        <c:forEach items="${event.response.httpHeaders}" var="httpHeader" varStatus="loopStatus">
+                                        <thead>
                                             <tr>
-                                                <td>${httpHeader.name}</td>
-                                                <td>${httpHeader.value}</td>
+                                                <th><spring:message code="rest.event.column.headername"/></th>
+                                                <th><spring:message code="rest.event.column.headervalue"/></th>
                                             </tr>
-                                        </c:forEach>
+                                        </thead>
+                                        <tbody>
+                                            <c:forEach items="${event.response.httpHeaders}" var="httpHeader" varStatus="loopStatus">
+                                                <tr>
+                                                    <td>${httpHeader.name}</td>
+                                                    <td>${httpHeader.value}</td>
+                                                </tr>
+                                            </c:forEach>
+                                        </tbody>
                                     </table>
                                 </div>
                             </c:when>

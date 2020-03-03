@@ -65,24 +65,28 @@
         <h2 class="decorated"><span><spring:message code="general.useroverview.header.usertable"/></span></h2>
         <div class="table-responsive">
             <table class="table table-striped table-hover sortable">
-                <tr>
-                    <th><spring:message code="general.useroverview.column.name"/></th>
-                    <th><spring:message code="general.useroverview.column.email"/></th>
-                    <th><spring:message code="general.useroverview.column.role"/></th>
-                    <th><spring:message code="general.useroverview.column.status"/></th>
-                    <th><spring:message code="general.useroverview.column.created"/></th>
-                    <th><spring:message code="general.useroverview.column.updated"/></th>
-                </tr>
-                <c:forEach items="${users}" var="user" varStatus="loopStatus">
+                <thead>
                     <tr>
-                        <td><a href="<c:url value="/web/user/${user.id}"/>">${user.username}</a></td>
-                        <td><a href="<c:url value="/web/user/${user.id}"/>">${user.email}</a></td>
-                        <td><spring:message code="general.type.role.${user.role}"/></td>
-                        <td><spring:message code="general.type.status.${user.status}"/></td>
-                        <td>${user.created}</td>
-                        <td>${user.updated}</td>
+                        <th><spring:message code="general.useroverview.column.name"/></th>
+                        <th><spring:message code="general.useroverview.column.email"/></th>
+                        <th><spring:message code="general.useroverview.column.role"/></th>
+                        <th><spring:message code="general.useroverview.column.status"/></th>
+                        <th><spring:message code="general.useroverview.column.created"/></th>
+                        <th><spring:message code="general.useroverview.column.updated"/></th>
                     </tr>
-                </c:forEach>
+                </thead>
+                <tbody>
+                    <c:forEach items="${users}" var="user" varStatus="loopStatus">
+                        <tr>
+                            <td><a href="<c:url value="/web/user/${user.id}"/>">${user.username}</a></td>
+                            <td><a href="<c:url value="/web/user/${user.id}"/>">${user.email}</a></td>
+                            <td><spring:message code="general.type.role.${user.role}"/></td>
+                            <td><spring:message code="general.type.status.${user.status}"/></td>
+                            <td>${user.created}</td>
+                            <td>${user.updated}</td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
             </table>
         </div>
     </section>

@@ -87,44 +87,42 @@
                     <form:form action="${graphql_resource_update_url}/" method="POST"  modelAttribute="graphQLQueryModifierCommand">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover sortable">
-                                <col width="10%">
-                                <col width="20%">
-                                <col width="10%">
-                                <col width="60%">
-
-                                <tr>
-                                    <th><spring:message code="graphql.graphqlapplication.column.selected"/></th>
-                                    <th><spring:message code="graphql.graphqlapplication.column.name"/></th>
-                                    <th><spring:message code="graphql.graphqlapplication.column.type"/></th>
-                                    <th><spring:message code="graphql.graphqlapplication.column.description"/></th>
-                                </tr>
-
-                                <c:forEach items="${graphQLApplication.queries}" var="graphQLQuery" varStatus="loopStatus">
+                                <thead>
                                     <tr>
-                                        <td><form:checkbox path="graphQLQueriesIds" name="${graphQLQuery.id}" value="${graphQLQuery.id}"/></td>
-                                        <td><a href="<c:url value="/web/graphql/project/${graphQLProjectId}/application/${graphQLApplication.id}/query/${graphQLQuery.id}"/>">${graphQLQuery.name}</a></td>
-                                        <td><spring:message code="graphql.graphqlapplication.column.type.query"/></td>
-                                        <td>${graphQLQuery.description}</td>
+                                        <th class="col-narrow"><spring:message code="graphql.graphqlapplication.column.selected"/></th>
+                                        <th style="width:20%"><spring:message code="graphql.graphqlapplication.column.name"/></th>
+                                        <th style="width:10%"><spring:message code="graphql.graphqlapplication.column.type"/></th>
+                                        <th style="width:60%"><spring:message code="graphql.graphqlapplication.column.description"/></th>
                                     </tr>
-                                </c:forEach>
+                                </thead>
+                                <tbody>
+                                    <c:forEach items="${graphQLApplication.queries}" var="graphQLQuery" varStatus="loopStatus">
+                                        <tr>
+                                            <td><form:checkbox path="graphQLQueriesIds" name="${graphQLQuery.id}" value="${graphQLQuery.id}"/></td>
+                                            <td><a href="<c:url value="/web/graphql/project/${graphQLProjectId}/application/${graphQLApplication.id}/query/${graphQLQuery.id}"/>">${graphQLQuery.name}</a></td>
+                                            <td><spring:message code="graphql.graphqlapplication.column.type.query"/></td>
+                                            <td>${graphQLQuery.description}</td>
+                                        </tr>
+                                    </c:forEach>
 
-                                <c:forEach items="${graphQLApplication.mutations}" var="graphQLMutation" varStatus="loopStatus">
-                                    <tr>
-                                        <td><form:checkbox path="graphQLQueriesIds" name="${graphQLMutation.id}" value="${graphQLMutation.id}"/></td>
-                                        <td><a href="<c:url value="/web/graphql/project/${graphQLProjectId}/application/${graphQLApplication.id}/mutation/${graphQLMutation.id}"/>">${graphQLMutation.name}</a></td>
-                                        <td><spring:message code="graphql.graphqlapplication.column.type.mutation"/></td>
-                                        <td>${graphQLQuery.description}</td>
-                                    </tr>
-                                </c:forEach>
+                                    <c:forEach items="${graphQLApplication.mutations}" var="graphQLMutation" varStatus="loopStatus">
+                                        <tr>
+                                            <td><form:checkbox path="graphQLQueriesIds" name="${graphQLMutation.id}" value="${graphQLMutation.id}"/></td>
+                                            <td><a href="<c:url value="/web/graphql/project/${graphQLProjectId}/application/${graphQLApplication.id}/mutation/${graphQLMutation.id}"/>">${graphQLMutation.name}</a></td>
+                                            <td><spring:message code="graphql.graphqlapplication.column.type.mutation"/></td>
+                                            <td>${graphQLQuery.description}</td>
+                                        </tr>
+                                    </c:forEach>
 
-                                <c:forEach items="${graphQLApplication.subscriptions}" var="graphQLSubscription" varStatus="loopStatus">
-                                    <tr>
-                                        <td><form:checkbox path="graphQLQueriesIds" name="${graphQLSubscription.id}" value="${graphQLSubscription.id}"/></td>
-                                        <td><a href="<c:url value="/web/graphql/project/${graphQLProjectId}/application/${graphQLApplication.id}/subscription/${graphQLSubscription.id}"/>">${graphQLSubscription.name}</a></td>
-                                        <td><spring:message code="graphql.graphqlapplication.column.type.subscription"/></td>
-                                        <td>${graphQLQuery.description}</td>
-                                    </tr>
-                                </c:forEach>
+                                    <c:forEach items="${graphQLApplication.subscriptions}" var="graphQLSubscription" varStatus="loopStatus">
+                                        <tr>
+                                            <td><form:checkbox path="graphQLQueriesIds" name="${graphQLSubscription.id}" value="${graphQLSubscription.id}"/></td>
+                                            <td><a href="<c:url value="/web/graphql/project/${graphQLProjectId}/application/${graphQLApplication.id}/subscription/${graphQLSubscription.id}"/>">${graphQLSubscription.name}</a></td>
+                                            <td><spring:message code="graphql.graphqlapplication.column.type.subscription"/></td>
+                                            <td>${graphQLQuery.description}</td>
+                                        </tr>
+                                    </c:forEach>
+                                </tbody>
                             </table>
                         </div>
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
@@ -144,32 +142,30 @@
                 <c:when test="${graphQLApplication.objects.size() > 0 || graphQLApplication.enums.size() > 0}">
                     <div class="table-responsive">
                         <table class="table table-striped table-hover sortable">
-                            <col width="20%">
-                            <col width="10%">
-                            <col width="70%">
-
-                            <tr>
-                                <th><spring:message code="graphql.graphqlapplication.column.name"/></th>
-                                <th><spring:message code="graphql.graphqlapplication.column.type"/></th>
-                                <th><spring:message code="graphql.graphqlapplication.column.description"/></th>
-                            </tr>
-
-                            <c:forEach items="${graphQLApplication.objects}" var="graphQLObject" varStatus="loopStatus">
+                            <thead>
                                 <tr>
-                                    <td><a href="<c:url value="/web/graphql/project/${graphQLProjectId}/application/${graphQLApplication.id}/object/${graphQLObject.id}"/>">${graphQLObject.name}</a></td>
-                                    <td><spring:message code="graphql.graphqlapplication.column.type.object"/></td>
-                                    <td>${graphQLObject.description}</td>
+                                    <th style="width:20%"><spring:message code="graphql.graphqlapplication.column.name"/></th>
+                                    <th style="width:10%"><spring:message code="graphql.graphqlapplication.column.type"/></th>
+                                    <th style="width:70%"><spring:message code="graphql.graphqlapplication.column.description"/></th>
                                 </tr>
-                            </c:forEach>
+                            </thead>
+                            <tbody>
+                                <c:forEach items="${graphQLApplication.objects}" var="graphQLObject" varStatus="loopStatus">
+                                    <tr>
+                                        <td><a href="<c:url value="/web/graphql/project/${graphQLProjectId}/application/${graphQLApplication.id}/object/${graphQLObject.id}"/>">${graphQLObject.name}</a></td>
+                                        <td><spring:message code="graphql.graphqlapplication.column.type.object"/></td>
+                                        <td>${graphQLObject.description}</td>
+                                    </tr>
+                                </c:forEach>
 
-                            <c:forEach items="${graphQLApplication.enums}" var="graphQLEnum" varStatus="loopStatus">
-                                <tr>
-                                    <td><a href="<c:url value="/web/graphql/project/${graphQLProjectId}/application/${graphQLApplication.id}/enum/${graphQLEnum.id}"/>">${graphQLEnum.name}</a></td>
-                                    <td><spring:message code="graphql.graphqlapplication.column.type.enum"/></td>
-                                    <td>${graphQLEnum.description}</td>
-                                </tr>
-                            </c:forEach>
-
+                                <c:forEach items="${graphQLApplication.enums}" var="graphQLEnum" varStatus="loopStatus">
+                                    <tr>
+                                        <td><a href="<c:url value="/web/graphql/project/${graphQLProjectId}/application/${graphQLApplication.id}/enum/${graphQLEnum.id}"/>">${graphQLEnum.name}</a></td>
+                                        <td><spring:message code="graphql.graphqlapplication.column.type.enum"/></td>
+                                        <td>${graphQLEnum.description}</td>
+                                    </tr>
+                                </c:forEach>
+                            </tbody>
                         </table>
                     </div>
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>

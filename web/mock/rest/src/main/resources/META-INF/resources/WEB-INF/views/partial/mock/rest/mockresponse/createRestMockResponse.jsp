@@ -113,14 +113,13 @@
 
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover sortable" id="headerTable">
-                                    <col width="4%">
-                                    <col width="48%">
-                                    <col width="48%">
-                                    <tr>
-                                        <th></th>
-                                        <th><spring:message code="rest.createrestmockresponse.column.headername"/></th>
-                                        <th><spring:message code="rest.createrestmockresponse.column.headervalue"/></th>
-                                    </tr>
+                                    <thead>
+                                        <tr>
+                                            <th class="col-narrow"></th>
+                                            <th><spring:message code="rest.createrestmockresponse.column.headername"/></th>
+                                            <th><spring:message code="rest.createrestmockresponse.column.headervalue"/></th>
+                                        </tr>
+                                    </thead>
                                 </table>
                             </div>
                         </div>
@@ -166,20 +165,16 @@
 
                                     <div class="table-responsive">
                                         <table class="table table-bordered table-striped table-hover sortable" id="queryTable">
-                                            <col width="5%">
-                                            <col width="32.5%">
-                                            <col width="32.5%">
-                                            <col width="10%">
-                                            <col width="10%">
-                                            <col width="10%">
-                                            <tr>
-                                                <th></th>
-                                                <th><spring:message code="rest.createrestmockresponse.column.header"/></th>
-                                                <th><spring:message code="rest.createrestmockresponse.column.query"/></th>
-                                                <th><spring:message code="rest.createrestmockresponse.column.matchany"/></th>
-                                                <th><spring:message code="rest.createrestmockresponse.column.matchcase"/></th>
-                                                <th><spring:message code="rest.createrestmockresponse.column.matchregex"/></th>
-                                            </tr>
+                                            <thead>
+                                                <tr>
+                                                    <th class="col-narrow"></th>
+                                                    <th style="width:32.5%"><spring:message code="rest.createrestmockresponse.column.header"/></th>
+                                                    <th style="width:32.5%"><spring:message code="rest.createrestmockresponse.column.query"/></th>
+                                                    <th style="width:10%"><spring:message code="rest.createrestmockresponse.column.matchany"/></th>
+                                                    <th style="width:10%"><spring:message code="rest.createrestmockresponse.column.matchcase"/></th>
+                                                    <th style="width:10%"><spring:message code="rest.createrestmockresponse.column.matchregex"/></th>
+                                                </tr>
+                                            </thead>
                                         </table>
                                     </div>
                                 </div>
@@ -202,10 +197,8 @@
 
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover sortable" id="xpathTable">
-                                    <col width="4%">
-                                    <col width="96%">
                                     <tr>
-                                        <th></th>
+                                        <th class="col-narrow"></th>
                                         <th><spring:message code="rest.createrestmockresponse.column.xpath"/></th>
                                     </tr>
                                 </table>
@@ -228,10 +221,8 @@
 
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover sortable" id="jsonPathTable">
-                                    <col width="4%">
-                                    <col width="96%">
                                     <tr>
-                                        <th></th>
+                                        <th class="col-narrow"></th>
                                         <th><spring:message code="rest.createrestmockresponse.column.jsonpath"/></th>
                                     </tr>
                                 </table>
@@ -271,20 +262,16 @@
 
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover sortable" id="headerQueryTable">
-                                    <col width="5%">
-                                    <col width="32.5%">
-                                    <col width="32.5%">
-                                    <col width="10%">
-                                    <col width="10%">
-                                    <col width="10%">
-                                    <tr>
-                                        <th></th>
-                                        <th><spring:message code="rest.restmockresponse.column.header"/></th>
-                                        <th><spring:message code="rest.restmockresponse.column.query"/></th>
-                                        <th><spring:message code="rest.restmockresponse.column.matchany"/></th>
-                                        <th><spring:message code="rest.restmockresponse.column.matchcase"/></th>
-                                        <th><spring:message code="rest.restmockresponse.column.matchregex"/></th>
-                                    </tr>
+                                    <thead>
+                                        <tr>
+                                            <th class="col-narrow"></th>
+                                            <th style="width:32.5%"><spring:message code="rest.restmockresponse.column.header"/></th>
+                                            <th style="width:32.5%"><spring:message code="rest.restmockresponse.column.query"/></th>
+                                            <th style="width:10%"><spring:message code="rest.restmockresponse.column.matchany"/></th>
+                                            <th style="width:10%"><spring:message code="rest.restmockresponse.column.matchcase"/></th>
+                                            <th style="width:10%"><spring:message code="rest.restmockresponse.column.matchregex"/></th>
+                                        </tr>
+                                    </thead>
                                 </table>
                             </div>
                         </div>

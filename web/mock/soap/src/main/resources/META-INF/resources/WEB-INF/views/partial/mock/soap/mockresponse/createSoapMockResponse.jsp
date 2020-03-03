@@ -100,14 +100,13 @@
 
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover sortable" id="headerTable">
-                                    <col width="4%">
-                                    <col width="48%">
-                                    <col width="48%">
-                                    <tr>
-                                        <th></th>
-                                        <th><spring:message code="soap.createsoapmockresponse.column.headername"/></th>
-                                        <th><spring:message code="soap.createsoapmockresponse.column.headervalue"/></th>
-                                    </tr>
+                                    <thead>
+                                        <tr>
+                                            <th class="col-narrow"></th>
+                                            <th><spring:message code="soap.createsoapmockresponse.column.headername"/></th>
+                                            <th><spring:message code="soap.createsoapmockresponse.column.headervalue"/></th>
+                                        </tr>
+                                    </thead>
                                 </table>
                             </div>
                         </div>
@@ -128,12 +127,12 @@
 
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover sortable" id="xpathTable">
-                                    <col width="4%">
-                                    <col width="96%">
-                                    <tr>
-                                        <th></th>
-                                        <th><spring:message code="soap.createsoapmockresponse.column.xpath"/></th>
-                                    </tr>
+                                    <thead>
+                                        <tr>
+                                            <th class="col-narrow"></th>
+                                            <th><spring:message code="soap.createsoapmockresponse.column.xpath"/></th>
+                                        </tr>
+                                    </thead>
                                 </table>
                             </div>
                         </div>

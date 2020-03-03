@@ -61,27 +61,26 @@
                     <form:form action="${rest_method_update_url}/" method="POST"  modelAttribute="command">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover sortable">
-                                <col width="10%">
-                                <col width="30%">
-                                <col width="10%">
-                                <col width="10%">
-                                <col width="40%">
-                                <tr>
-                                    <th></th>
-                                    <th><spring:message code="rest.restresource.column.methodname"/></th>
-                                    <th><spring:message code="rest.restresource.column.methodmethodtype"/></th>
-                                    <th><spring:message code="rest.restresource.column.methodmethodstatus"/></th>
-                                    <th><spring:message code="rest.restresource.column.methodforwardedendpoint"/></th>
-                                </tr>
-                                <c:forEach items="${restResource.methods}" var="restMethod" varStatus="loopStatus">
+                                <thead>
                                     <tr>
-                                        <td><form:checkbox path="restMethodIds" name="${restMethod.id}" value="${restMethod.id}"/></td>
-                                        <td><a href="<c:url value="/web/rest/project/${restProjectId}/application/${restApplicationId}/resource/${restResource.id}/method/${restMethod.id}"/>">${restMethod.name}</a></td>
-                                        <td><a href="<c:url value="/web/rest/project/${restProjectId}/application/${restApplicationId}/resource/${restResource.id}/method/${restMethod.id}"/>">${restMethod.httpMethod}</a></td>
-                                        <td><a href="<c:url value="/web/rest/project/${restProjectId}/application/${restApplicationId}/resource/${restResource.id}/method/${restMethod.id}"/>"><spring:message code="rest.type.restmethodstatus.${restMethod.status}"/></a></td>
-                                        <td><a href="<c:url value="/web/rest/project/${restProjectId}/application/${restApplicationId}/resource/${restResource.id}/method/${restMethod.id}"/>">${restMethod.forwardedEndpoint}</a></td>
+                                        <th class="col-narrow"></th>
+                                        <th style="width:30%"><spring:message code="rest.restresource.column.methodname"/></th>
+                                        <th style="width:10%"><spring:message code="rest.restresource.column.methodmethodtype"/></th>
+                                        <th style="width:10%"><spring:message code="rest.restresource.column.methodmethodstatus"/></th>
+                                        <th style="width:40%"><spring:message code="rest.restresource.column.methodforwardedendpoint"/></th>
                                     </tr>
-                                </c:forEach>
+                                </thead>
+                                <tbody>
+                                    <c:forEach items="${restResource.methods}" var="restMethod" varStatus="loopStatus">
+                                        <tr>
+                                            <td><form:checkbox path="restMethodIds" name="${restMethod.id}" value="${restMethod.id}"/></td>
+                                            <td><a href="<c:url value="/web/rest/project/${restProjectId}/application/${restApplicationId}/resource/${restResource.id}/method/${restMethod.id}"/>">${restMethod.name}</a></td>
+                                            <td><a href="<c:url value="/web/rest/project/${restProjectId}/application/${restApplicationId}/resource/${restResource.id}/method/${restMethod.id}"/>">${restMethod.httpMethod}</a></td>
+                                            <td><a href="<c:url value="/web/rest/project/${restProjectId}/application/${restApplicationId}/resource/${restResource.id}/method/${restMethod.id}"/>"><spring:message code="rest.type.restmethodstatus.${restMethod.status}"/></a></td>
+                                            <td><a href="<c:url value="/web/rest/project/${restProjectId}/application/${restApplicationId}/resource/${restResource.id}/method/${restMethod.id}"/>">${restMethod.forwardedEndpoint}</a></td>
+                                        </tr>
+                                    </c:forEach>
+                                </tbody>
                             </table>
                         </div>
                         <div class="panel-buttons">

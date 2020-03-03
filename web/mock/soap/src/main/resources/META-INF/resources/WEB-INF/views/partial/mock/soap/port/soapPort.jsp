@@ -62,27 +62,26 @@
                     <form:form action="${operation_update_url}" method="POST"  modelAttribute="command">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover sortable">
-                                <col width="0%">
-                                <col width="40%">
-                                <col width="15%">
-                                <col width="20%">
-                                <col width="15%">
-                                <tr>
-                                    <th></th>
-                                    <th><spring:message code="soap.soapport.column.name"/></th>
-                                    <th><spring:message code="soap.soapport.column.method"/></th>
-                                    <th><spring:message code="soap.soapport.column.responsestrategy"/></th>
-                                    <th><spring:message code="soap.soapport.column.soapMockResponseStatus"/></th>
-                                </tr>
-                                <c:forEach items="${soapPort.operations}" var="soapOperation" varStatus="loopStatus">
+                                <thead>
                                     <tr>
-                                        <td><form:checkbox path="soapOperationIds" name="${soapOperation.id}" value="${soapOperation.id}"/></td>
-                                        <td><a href="<c:url value="/web/soap/project/${soapProjectId}/port/${soapPort.id}/operation/${soapOperation.id}"/>">${soapOperation.name}</a></td>
-                                        <td>${soapOperation.httpMethod}</td>
-                                        <td><spring:message code="soap.type.responsestrategy.${soapOperation.responseStrategy}"/></td>
-                                        <td><spring:message code="soap.type.soapoperationstatus.${soapOperation.status}"/></td>
+                                        <th class="col-narrow"></th>
+                                        <th style="width:40%"><spring:message code="soap.soapport.column.name"/></th>
+                                        <th style="width:15%"><spring:message code="soap.soapport.column.method"/></th>
+                                        <th style="width:20%"><spring:message code="soap.soapport.column.responsestrategy"/></th>
+                                        <th style="width:15%"><spring:message code="soap.soapport.column.soapMockResponseStatus"/></th>
                                     </tr>
-                                </c:forEach>
+                                </thead>
+                                <tbody>
+                                    <c:forEach items="${soapPort.operations}" var="soapOperation" varStatus="loopStatus">
+                                        <tr>
+                                            <td><form:checkbox path="soapOperationIds" name="${soapOperation.id}" value="${soapOperation.id}"/></td>
+                                            <td><a href="<c:url value="/web/soap/project/${soapProjectId}/port/${soapPort.id}/operation/${soapOperation.id}"/>">${soapOperation.name}</a></td>
+                                            <td>${soapOperation.httpMethod}</td>
+                                            <td><spring:message code="soap.type.responsestrategy.${soapOperation.responseStrategy}"/></td>
+                                            <td><spring:message code="soap.type.soapoperationstatus.${soapOperation.status}"/></td>
+                                        </tr>
+                                    </c:forEach>
+                                </tbody>
                             </table>
                         </div>
                         <div class="panel-buttons">

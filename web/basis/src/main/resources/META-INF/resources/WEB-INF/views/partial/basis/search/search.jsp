@@ -31,18 +31,20 @@
             <c:when test="${searchResults.size() > 0}">
                 <div class="table-responsive">
                     <table class="table table-striped table-hover sortable">
-                        <col width="50%">
-                        <col width="50%">
-                        <tr>
-                            <th><spring:message code="general.search.column.title"/></th>
-                            <th><spring:message code="general.search.column.description"/></th>
-                        </tr>
-                        <c:forEach items="${searchResults}" var="searchResult" varStatus="loopStatus">
+                        <thead>
                             <tr>
-                                <td><a href="<c:url value="/web/${searchResult.link}"/>">${searchResult.title}</a></td>
-                                <td>${searchResult.description}</td>
+                                <th style="width: 50%;"><spring:message code="general.search.column.title"/></th>
+                                <th style="width: 50%;"><spring:message code="general.search.column.description"/></th>
                             </tr>
-                        </c:forEach>
+                        </thead>
+                        <tbody>
+                            <c:forEach items="${searchResults}" var="searchResult" varStatus="loopStatus">
+                                <tr>
+                                    <td><a href="<c:url value="/web/${searchResult.link}"/>">${searchResult.title}</a></td>
+                                    <td>${searchResult.description}</td>
+                                </tr>
+                            </c:forEach>
+                        </tbody>
                     </table>
                 </div>
             </c:when>

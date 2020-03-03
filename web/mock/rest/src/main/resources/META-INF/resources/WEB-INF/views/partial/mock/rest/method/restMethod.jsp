@@ -88,24 +88,24 @@
                     <form:form action="${rest_mock_response_update_url}" method="POST"  modelAttribute="command">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover sortable">
-                                <col width="10%">
-                                <col width="50%">
-                                <col width="20%">
-                                <col width="20%">
-                                <tr>
-                                    <th></th>
-                                    <th><spring:message code="rest.restmethod.column.responsename"/></th>
-                                    <th><spring:message code="rest.restmethod.column.status"/></th>
-                                    <th><spring:message code="rest.restmethod.column.httpstatuscode"/></th>
-                                </tr>
-                                <c:forEach items="${restMethod.mockResponses}" var="restMockResponse" varStatus="loopStatus">
+                                <thead>
                                     <tr>
-                                        <td><form:checkbox path="restMockResponseIds" name="${restMockResponse.id}" value="${restMockResponse.id}"/></td>
-                                        <td><a href="<c:url value="/web/rest/project/${restProjectId}/application/${restApplicationId}/resource/${restResourceId}/method/${restMethod.id}/response/${restMockResponse.id}"/>">${restMockResponse.name}</a></td>
-                                        <td><spring:message code="rest.type.restmockresponsestatus.${restMockResponse.status}"/></td>
-                                        <td>${restMockResponse.httpStatusCode}</td>
+                                        <th class="col-narrow"></th>
+                                        <th style="width:50%"><spring:message code="rest.restmethod.column.responsename"/></th>
+                                        <th style="width:20%"><spring:message code="rest.restmethod.column.status"/></th>
+                                        <th style="width:20%"><spring:message code="rest.restmethod.column.httpstatuscode"/></th>
                                     </tr>
-                                </c:forEach>
+                                </thead>
+                                <tbody>
+                                    <c:forEach items="${restMethod.mockResponses}" var="restMockResponse" varStatus="loopStatus">
+                                        <tr>
+                                            <td><form:checkbox path="restMockResponseIds" name="${restMockResponse.id}" value="${restMockResponse.id}"/></td>
+                                            <td><a href="<c:url value="/web/rest/project/${restProjectId}/application/${restApplicationId}/resource/${restResourceId}/method/${restMethod.id}/response/${restMockResponse.id}"/>">${restMockResponse.name}</a></td>
+                                            <td><spring:message code="rest.type.restmockresponsestatus.${restMockResponse.status}"/></td>
+                                            <td>${restMockResponse.httpStatusCode}</td>
+                                        </tr>
+                                    </c:forEach>
+                                </tbody>
                             </table>
                         </div>
                         <div class="panel-buttons">
@@ -137,24 +137,24 @@
                 <c:when test="${restEvents.size() > 0}">
                     <div class="table-responsive">
                         <table class="table table-striped table-hover sortable">
-                            <col width="10%">
-                            <col width="40%">
-                            <col width="25%">
-                            <col width="25%">
-                            <tr>
-                                <th><spring:message code="rest.restmethod.column.id"/></th>
-                                <th><spring:message code="rest.restmethod.column.mockedresponse"/></th>
-                                <th><spring:message code="rest.restmethod.column.startdate"/></th>
-                                <th><spring:message code="rest.restmethod.column.enddate"/></th>
-                            </tr>
-                            <c:forEach items="${restEvents}" var="event" varStatus="loopStatus">
+                            <thead>
                                 <tr>
-                                    <td><a href="<c:url value="/web/rest/event/${event.id}"/>">${event.id}</a></td>
-                                    <td><a href="<c:url value="/web/rest/event/${event.id}"/>">${event.response.mockResponseName}</a></td>
-                                    <td><a href="<c:url value="/web/rest/event/${event.id}"/>">${event.startDate}</a></td>
-                                    <td><a href="<c:url value="/web/rest/event/${event.id}"/>">${event.endDate}</a></td>
+                                    <th class="col-narrow"><spring:message code="rest.restmethod.column.id"/></th>
+                                    <th style="width:40%"><spring:message code="rest.restmethod.column.mockedresponse"/></th>
+                                    <th style="width:25%"><spring:message code="rest.restmethod.column.startdate"/></th>
+                                    <th style="width:25%"><spring:message code="rest.restmethod.column.enddate"/></th>
                                 </tr>
-                            </c:forEach>
+                            </thead>
+                            <tbody>
+                                <c:forEach items="${restEvents}" var="event" varStatus="loopStatus">
+                                    <tr>
+                                        <td><a href="<c:url value="/web/rest/event/${event.id}"/>">${event.id}</a></td>
+                                        <td><a href="<c:url value="/web/rest/event/${event.id}"/>">${event.response.mockResponseName}</a></td>
+                                        <td><a href="<c:url value="/web/rest/event/${event.id}"/>">${event.startDate}</a></td>
+                                        <td><a href="<c:url value="/web/rest/event/${event.id}"/>">${event.endDate}</a></td>
+                                    </tr>
+                                </c:forEach>
+                            </tbody>
                         </table>
                     </div>
                 </c:when>

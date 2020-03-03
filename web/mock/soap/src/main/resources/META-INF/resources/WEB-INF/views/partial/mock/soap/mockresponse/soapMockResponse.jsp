@@ -109,21 +109,22 @@
 
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped table-hover sortable" id="headerTable">
-                                <col width="4%">
-                                <col width="48%">
-                                <col width="48%">
-                                <tr>
-                                    <th></th>
-                                    <th><spring:message code="soap.soapmockresponse.column.headername"/></th>
-                                    <th><spring:message code="soap.soapmockresponse.column.headervalue"/></th>
-                                </tr>
-                                <c:forEach items="${soapMockResponse.httpHeaders}" var="httpHeader" varStatus="loopStatus">
-                                    <tr class="even">
-                                        <td><div class="delete" onclick="removeHeader('${httpHeader.name}')"></div></td>
-                                        <td><input name="httpHeaders[${loopStatus.index}].name" id="httpHeaders[${loopStatus.index}].name" value="${httpHeader.name}" type="hidden" />${httpHeader.name}</td>
-                                        <td><input name="httpHeaders[${loopStatus.index}].value" id="httpHeaders[${loopStatus.index}].value" value="${httpHeader.value}" type="hidden"/>${httpHeader.value}</td>
+                                <thead>
+                                    <tr>
+                                        <th class="col-narrow"></th>
+                                        <th style="width:48%"><spring:message code="soap.soapmockresponse.column.headername"/></th>
+                                        <th style="width:48%"><spring:message code="soap.soapmockresponse.column.headervalue"/></th>
                                     </tr>
-                                </c:forEach>
+                                </thead>
+                                <tbody>
+                                    <c:forEach items="${soapMockResponse.httpHeaders}" var="httpHeader" varStatus="loopStatus">
+                                        <tr class="even">
+                                            <td><div class="delete" onclick="removeHeader('${httpHeader.name}')"></div></td>
+                                            <td><input name="httpHeaders[${loopStatus.index}].name" id="httpHeaders[${loopStatus.index}].name" value="${httpHeader.name}" type="hidden" />${httpHeader.name}</td>
+                                            <td><input name="httpHeaders[${loopStatus.index}].value" id="httpHeaders[${loopStatus.index}].value" value="${httpHeader.value}" type="hidden"/>${httpHeader.value}</td>
+                                        </tr>
+                                    </c:forEach>
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -146,20 +147,22 @@
 
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped table-hover sortable" id="xpathTable">
-                                <col width="4%">
-                                <col width="96%">
-                                <tr>
-                                    <th></th>
-                                    <th><spring:message code="soap.soapmockresponse.column.xpath"/></th>
-                                </tr>
-                                <c:forEach items="${soapMockResponse.xpathExpressions}" var="xpathExpression" varStatus="loopStatus">
-                                    <tr class="even">
-                                        <c:set var = "xpathId" value = "${UUID.randomUUID().toString()}"/>
-                                        <td hidden="hidden"><c:out value = "${xpathId}"/></td>
-                                        <td><div class="delete" onclick="removeXpath('${xpathId}')"></div></td>
-                                        <td><input name="xpathExpressions[${loopStatus.index}].expression" id="xpathExpressions[${loopStatus.index}].expression" value="${xpathExpression.expression}" type="hidden" />${xpathExpression.expression}</td>
+                                <thead>
+                                    <tr>
+                                        <th class="col-narrow"></th>
+                                        <th><spring:message code="soap.soapmockresponse.column.xpath"/></th>
                                     </tr>
-                                </c:forEach>
+                                </thead>
+                                <tbody>
+                                    <c:forEach items="${soapMockResponse.xpathExpressions}" var="xpathExpression" varStatus="loopStatus">
+                                        <tr class="even">
+                                            <c:set var = "xpathId" value = "${UUID.randomUUID().toString()}"/>
+                                            <td hidden="hidden"><c:out value = "${xpathId}"/></td>
+                                            <td><div class="delete" onclick="removeXpath('${xpathId}')"></div></td>
+                                            <td><input name="xpathExpressions[${loopStatus.index}].expression" id="xpathExpressions[${loopStatus.index}].expression" value="${xpathExpression.expression}" type="hidden" />${xpathExpression.expression}</td>
+                                        </tr>
+                                    </c:forEach>
+                                </tbody>
                             </table>
                         </div>
                     </div>

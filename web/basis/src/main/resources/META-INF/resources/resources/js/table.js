@@ -24,7 +24,8 @@ $(document).ready(function() {
             "paging": false,
             "info": false,
             "ordering": true,
-            "searching": true
+            "searching": true,
+            "stateSave": true
         }
     );
 });

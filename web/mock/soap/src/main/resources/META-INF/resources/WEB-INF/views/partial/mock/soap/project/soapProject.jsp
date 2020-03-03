@@ -83,24 +83,26 @@
                         <form:form action="${soap_port_update_url}/" method="POST"  modelAttribute="command">
                             <div class="table-responsive">
                                 <table class="table table-striped table-hover sortable">
-                                    <col width="5%">
-                                    <col width="40%">
-                                    <tr>
-                                        <th></th>
-                                        <th><spring:message code="soap.soapproject.column.port"/></th>
-                                        <c:forEach items="${soapOperationStatuses}" var="soapOperationStatus">
-                                            <th><spring:message code="soap.type.soapoperationstatus.${soapOperationStatus}"/></th>
-                                        </c:forEach>
-                                    </tr>
-                                    <c:forEach items="${soapProject.ports}" var="soapPort" varStatus="loopStatus">
+                                    <thead>
                                         <tr>
-                                            <td><form:checkbox path="soapPortIds" name="${soapPort.id}" value="${soapPort.id}"/></td>
-                                            <td><a href="<c:url value="/web/soap/project/${soapProject.id}/port/${soapPort.id}"/>">${soapPort.name}</a></td>
+                                            <th class="col-narrow"></th>
+                                            <th><spring:message code="soap.soapproject.column.port"/></th>
                                             <c:forEach items="${soapOperationStatuses}" var="soapOperationStatus">
-                                                <td>${soapPort.statusCount[soapOperationStatus]}</td>
+                                                <th><spring:message code="soap.type.soapoperationstatus.${soapOperationStatus}"/></th>
                                             </c:forEach>
                                         </tr>
-                                    </c:forEach>
+                                    </thead>
+                                    <tbody>
+                                        <c:forEach items="${soapProject.ports}" var="soapPort" varStatus="loopStatus">
+                                            <tr>
+                                                <td><form:checkbox path="soapPortIds" name="${soapPort.id}" value="${soapPort.id}"/></td>
+                                                <td><a href="<c:url value="/web/soap/project/${soapProject.id}/port/${soapPort.id}"/>">${soapPort.name}</a></td>
+                                                <c:forEach items="${soapOperationStatuses}" var="soapOperationStatus">
+                                                    <td>${soapPort.statusCount[soapOperationStatus]}</td>
+                                                </c:forEach>
+                                            </tr>
+                                        </c:forEach>
+                                    </tbody>
                                 </table>
                             </div>
                             <div class="panel-buttons">
@@ -133,18 +135,20 @@
                     <c:when test="${soapProject.resources.size() > 0}">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover sortable">
-                                <col width="0%">
-                                <col width="90%">
-                                <tr>
-                                    <th><spring:message code="soap.soapproject.column.type"/></th>
-                                    <th><spring:message code="soap.soapproject.column.resource"/></th>
-                                </tr>
-                                <c:forEach items="${soapProject.resources}" var="soapResource" varStatus="loopStatus">
+                                <head>
                                     <tr>
-                                        <td>${soapResource.type}</td>
-                                        <td><a href="<c:url value="/web/soap/project/${soapProject.id}/resource/${soapResource.id}"/>">${soapResource.name}</a></td>
+                                        <th class="col-narrow"><spring:message code="soap.soapproject.column.type"/></th>
+                                        <th><spring:message code="soap.soapproject.column.resource"/></th>
                                     </tr>
-                                </c:forEach>
+                                </head>
+                                <tbody>
+                                    <c:forEach items="${soapProject.resources}" var="soapResource" varStatus="loopStatus">
+                                        <tr>
+                                            <td>${soapResource.type}</td>
+                                            <td><a href="<c:url value="/web/soap/project/${soapProject.id}/resource/${soapResource.id}"/>">${soapResource.name}</a></td>
+                                        </tr>
+                                    </c:forEach>
+                                </tbody>
                             </table>
                         </div>
                     </c:when>

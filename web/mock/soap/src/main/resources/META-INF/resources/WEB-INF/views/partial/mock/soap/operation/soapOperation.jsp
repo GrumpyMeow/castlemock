@@ -104,24 +104,24 @@
                     <form:form action="${soap_mock_response_update_url}" method="POST"  modelAttribute="command">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover sortable">
-                                <col width="0%">
-                                <col width="50%">
-                                <col width="20%">
-                                <col width="20%">
-                                <tr>
-                                    <th></th>
-                                    <th><spring:message code="soap.soapoperation.column.responsename"/></th>
-                                    <th><spring:message code="soap.soapoperation.column.status"/></th>
-                                    <th><spring:message code="soap.soapoperation.column.httpstatuscode"/></th>
-                                </tr>
-                                <c:forEach items="${soapOperation.mockResponses}" var="soapMockResponse" varStatus="loopStatus">
+                                <head>
                                     <tr>
-                                        <td><form:checkbox path="soapMockResponseIds" name="${soapMockResponse.id}" value="${soapMockResponse.id}"/></td>
-                                        <td><a href="<c:url value="/web/soap/project/${soapProjectId}/port/${soapPortId}/operation/${soapOperation.id}/response/${soapMockResponse.id}"/>">${soapMockResponse.name}</a></td>
-                                        <td><spring:message code="soap.type.soapmockresponsestatus.${soapMockResponse.status}"/></td>
-                                        <td>${soapMockResponse.httpStatusCode}</td>
+                                        <th class="col-narrow"></th>
+                                        <th style="width:50%"><spring:message code="soap.soapoperation.column.responsename"/></th>
+                                        <th style="width:20%"><spring:message code="soap.soapoperation.column.status"/></th>
+                                        <th style="width:20%"><spring:message code="soap.soapoperation.column.httpstatuscode"/></th>
                                     </tr>
-                                </c:forEach>
+                                </head>
+                                <tbody>
+                                    <c:forEach items="${soapOperation.mockResponses}" var="soapMockResponse" varStatus="loopStatus">
+                                        <tr>
+                                            <td><form:checkbox path="soapMockResponseIds" name="${soapMockResponse.id}" value="${soapMockResponse.id}"/></td>
+                                            <td><a href="<c:url value="/web/soap/project/${soapProjectId}/port/${soapPortId}/operation/${soapOperation.id}/response/${soapMockResponse.id}"/>">${soapMockResponse.name}</a></td>
+                                            <td><spring:message code="soap.type.soapmockresponsestatus.${soapMockResponse.status}"/></td>
+                                            <td>${soapMockResponse.httpStatusCode}</td>
+                                        </tr>
+                                    </c:forEach>
+                                </tbody>
                             </table>
                         </div>
                         <div class="panel-buttons">
@@ -153,24 +153,24 @@
                 <c:when test="${soapEvents.size() > 0}">
                     <div class="table-responsive">
                         <table class="table table-striped table-hover sortable">
-                            <col width="10%">
-                            <col width="40%">
-                            <col width="25%">
-                            <col width="25%">
-                            <tr>
-                                <th><spring:message code="soap.soapoperation.column.id"/></th>
-                                <th><spring:message code="soap.soapoperation.column.mockedresponse"/></th>
-                                <th><spring:message code="soap.soapoperation.column.startdate"/></th>
-                                <th><spring:message code="soap.soapoperation.column.enddate"/></th>
-                            </tr>
-                            <c:forEach items="${soapEvents}" var="event" varStatus="loopStatus">
+                            <thead>
                                 <tr>
-                                    <td><a href="<c:url value="/web/soap/event/${event.id}"/>">${event.id}</a></td>
-                                    <td><a href="<c:url value="/web/soap/event/${event.id}"/>">${event.response.mockResponseName}</a></td>
-                                    <td><a href="<c:url value="/web/soap/event/${event.id}"/>">${event.startDate}</a></td>
-                                    <td><a href="<c:url value="/web/soap/event/${event.id}"/>">${event.endDate}</a></td>
+                                    <th class="col-narrow"><spring:message code="soap.soapoperation.column.id"/></th>
+                                    <th style="width:40%"><spring:message code="soap.soapoperation.column.mockedresponse"/></th>
+                                    <th style="width:25%"><spring:message code="soap.soapoperation.column.startdate"/></th>
+                                    <th style="width:25%"><spring:message code="soap.soapoperation.column.enddate"/></th>
                                 </tr>
-                            </c:forEach>
+                            </thead>
+                            <tbody>
+                                <c:forEach items="${soapEvents}" var="event" varStatus="loopStatus">
+                                    <tr>
+                                        <td><a href="<c:url value="/web/soap/event/${event.id}"/>">${event.id}</a></td>
+                                        <td><a href="<c:url value="/web/soap/event/${event.id}"/>">${event.response.mockResponseName}</a></td>
+                                        <td><a href="<c:url value="/web/soap/event/${event.id}"/>">${event.startDate}</a></td>
+                                        <td><a href="<c:url value="/web/soap/event/${event.id}"/>">${event.endDate}</a></td>
+                                    </tr>
+                                </c:forEach>
+                            </tbody>
                         </table>
                     </div>
                 </c:when>

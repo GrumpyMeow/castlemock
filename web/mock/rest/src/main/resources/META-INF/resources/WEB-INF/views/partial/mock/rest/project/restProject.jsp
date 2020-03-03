@@ -85,25 +85,26 @@
                     <form:form action="${rest_resource_update_url}/" method="POST"  modelAttribute="command">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover sortable">
-                                <col width="10%">
-                                <col width="40%">
-
-                                <tr>
-                                    <th></th>
-                                    <th><spring:message code="rest.restproject.column.application"/></th>
-                                    <c:forEach items="${restMethodStatuses}" var="restMethodStatus">
-                                        <th><spring:message code="rest.type.restmethodstatus.${restMethodStatus}"/></th>
-                                    </c:forEach>
-                                </tr>
-                                <c:forEach items="${restProject.applications}" var="restApplication" varStatus="loopStatus">
+                                <thead>
                                     <tr>
-                                        <td><form:checkbox path="restApplicationIds" name="${restApplication.id}" value="${restApplication.id}"/></td>
-                                        <td><a href="<c:url value="/web/rest/project/${restProject.id}/application/${restApplication.id}"/>">${restApplication.name}</a></td>
+                                        <th class="col-narrow"></th>
+                                        <th><spring:message code="rest.restproject.column.application"/></th>
                                         <c:forEach items="${restMethodStatuses}" var="restMethodStatus">
-                                            <td>${restApplication.statusCount[restMethodStatus]}</td>
+                                            <th><spring:message code="rest.type.restmethodstatus.${restMethodStatus}"/></th>
                                         </c:forEach>
                                     </tr>
-                                </c:forEach>
+                                </thead>
+                                <tbody>
+                                    <c:forEach items="${restProject.applications}" var="restApplication" varStatus="loopStatus">
+                                        <tr>
+                                            <td><form:checkbox path="restApplicationIds" name="${restApplication.id}" value="${restApplication.id}"/></td>
+                                            <td><a href="<c:url value="/web/rest/project/${restProject.id}/application/${restApplication.id}"/>">${restApplication.name}</a></td>
+                                            <c:forEach items="${restMethodStatuses}" var="restMethodStatus">
+                                                <td>${restApplication.statusCount[restMethodStatus]}</td>
+                                            </c:forEach>
+                                        </tr>
+                                    </c:forEach>
+                                </tbody>
                             </table>
                         </div>
                         <div class="panel-buttons">

@@ -117,21 +117,22 @@
 
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover sortable" id="headerTable">
-                                    <col width="4%">
-                                    <col width="48%">
-                                    <col width="48%">
-                                    <tr>
-                                        <th></th>
-                                        <th><spring:message code="rest.restmockresponse.column.headername"/></th>
-                                        <th><spring:message code="rest.restmockresponse.column.headervalue"/></th>
-                                    </tr>
-                                    <c:forEach items="${restMockResponse.httpHeaders}" var="httpHeader" varStatus="loopStatus">
-                                        <tr class="even">
-                                            <td><div class="delete" onclick="removeHeader('${httpHeader.name}')"></div></td>
-                                            <td><input name="httpHeaders[${loopStatus.index}].name" id="httpHeaders[${loopStatus.index}].name" value="${httpHeader.name}" type="hidden" />${httpHeader.name}</td>
-                                            <td><input name="httpHeaders[${loopStatus.index}].value" id="httpHeaders[${loopStatus.index}].value" value="${httpHeader.value}" type="hidden"/>${httpHeader.value}</td>
+                                    <thead>
+                                        <tr>
+                                            <th class="col-narrow"></th>
+                                            <th style="width:48%"><spring:message code="rest.restmockresponse.column.headername"/></th>
+                                            <th style="width:48%"><spring:message code="rest.restmockresponse.column.headervalue"/></th>
                                         </tr>
-                                    </c:forEach>
+                                    </thead>
+                                    <tbody>
+                                        <c:forEach items="${restMockResponse.httpHeaders}" var="httpHeader" varStatus="loopStatus">
+                                            <tr class="even">
+                                                <td><div class="delete" onclick="removeHeader('${httpHeader.name}')"></div></td>
+                                                <td><input name="httpHeaders[${loopStatus.index}].name" id="httpHeaders[${loopStatus.index}].name" value="${httpHeader.name}" type="hidden" />${httpHeader.name}</td>
+                                                <td><input name="httpHeaders[${loopStatus.index}].value" id="httpHeaders[${loopStatus.index}].value" value="${httpHeader.value}" type="hidden"/>${httpHeader.value}</td>
+                                            </tr>
+                                        </c:forEach>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -177,32 +178,30 @@
 
                                     <div class="table-responsive">
                                         <table class="table table-bordered table-striped table-hover sortable" id="queryTable">
-                                            <col width="5%">
-                                            <col width="32.5%">
-                                            <col width="32.5%">
-                                            <col width="10%">
-                                            <col width="10%">
-                                            <col width="10%">
-                                            <tr>
-                                                <th></th>
-                                                <th><spring:message code="rest.restmockresponse.column.parameter"/></th>
-                                                <th><spring:message code="rest.restmockresponse.column.query"/></th>
-                                                <th><spring:message code="rest.restmockresponse.column.matchany"/></th>
-                                                <th><spring:message code="rest.restmockresponse.column.matchcase"/></th>
-                                                <th><spring:message code="rest.restmockresponse.column.matchregex"/></th>
-                                            </tr>
-                                            <c:forEach items="${restMockResponse.parameterQueries}" var="parameterQuery" varStatus="loopStatus">
-                                                <tr class="even">
-                                                    <c:set var = "parameterQueryId" value = "${UUID.randomUUID().toString()}"/>
-                                                    <td hidden="hidden"><c:out value = "${parameterQueryId}"/></td>
-                                                    <td><div class="delete" onclick="removeParameterQuery('${parameterQueryId}')"></div></td>
-                                                    <td><input name="parameterQueries[${loopStatus.index}].header" id="parameterQueries[${loopStatus.index}].header" value="${parameterQuery.parameter}" type="hidden" />${parameterQuery.parameter}</td>
-                                                    <td><input name="parameterQueries[${loopStatus.index}].query" id="parameterQueries[${loopStatus.index}].query" value="${parameterQuery.query}" type="hidden"/>${parameterQuery.query}</td>
-                                                    <td><input name="parameterQueries[${loopStatus.index}].matchAny" id="parameterQueries[${loopStatus.index}].matchAny" value="${parameterQuery.matchAny}" type="hidden"/>${parameterQuery.matchAny}</td>
-                                                    <td><input name="parameterQueries[${loopStatus.index}].matchCase" id="parameterQueries[${loopStatus.index}].matchCase" value="${parameterQuery.matchCase}" type="hidden"/>${parameterQuery.matchCase}</td>
-                                                    <td><input name="parameterQueries[${loopStatus.index}].matchRegex" id="parameterQueries[${loopStatus.index}].matchRegex" value="${parameterQuery.matchRegex}" type="hidden"/>${parameterQuery.matchRegex}</td>
+                                            <thead>
+                                                <tr>
+                                                    <th class="col-narrow"></th>
+                                                    <th style="width:32.5%"><spring:message code="rest.restmockresponse.column.parameter"/></th>
+                                                    <th style="width:32.5%"><spring:message code="rest.restmockresponse.column.query"/></th>
+                                                    <th style="width:10%"><spring:message code="rest.restmockresponse.column.matchany"/></th>
+                                                    <th style="width:10%"><spring:message code="rest.restmockresponse.column.matchcase"/></th>
+                                                    <th style="width:10%"><spring:message code="rest.restmockresponse.column.matchregex"/></th>
                                                 </tr>
-                                            </c:forEach>
+                                            </thead>
+                                            <tbody>
+                                                <c:forEach items="${restMockResponse.parameterQueries}" var="parameterQuery" varStatus="loopStatus">
+                                                    <tr class="even">
+                                                        <c:set var = "parameterQueryId" value = "${UUID.randomUUID().toString()}"/>
+                                                        <td hidden="hidden"><c:out value = "${parameterQueryId}"/></td>
+                                                        <td><div class="delete" onclick="removeParameterQuery('${parameterQueryId}')"></div></td>
+                                                        <td><input name="parameterQueries[${loopStatus.index}].header" id="parameterQueries[${loopStatus.index}].header" value="${parameterQuery.parameter}" type="hidden" />${parameterQuery.parameter}</td>
+                                                        <td><input name="parameterQueries[${loopStatus.index}].query" id="parameterQueries[${loopStatus.index}].query" value="${parameterQuery.query}" type="hidden"/>${parameterQuery.query}</td>
+                                                        <td><input name="parameterQueries[${loopStatus.index}].matchAny" id="parameterQueries[${loopStatus.index}].matchAny" value="${parameterQuery.matchAny}" type="hidden"/>${parameterQuery.matchAny}</td>
+                                                        <td><input name="parameterQueries[${loopStatus.index}].matchCase" id="parameterQueries[${loopStatus.index}].matchCase" value="${parameterQuery.matchCase}" type="hidden"/>${parameterQuery.matchCase}</td>
+                                                        <td><input name="parameterQueries[${loopStatus.index}].matchRegex" id="parameterQueries[${loopStatus.index}].matchRegex" value="${parameterQuery.matchRegex}" type="hidden"/>${parameterQuery.matchRegex}</td>
+                                                    </tr>
+                                                </c:forEach>
+                                            </tbody>
                                         </table>
                                     </div>
                                 </div>
@@ -225,20 +224,22 @@
 
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover sortable" id="xpathTable">
-                                    <col width="4%">
-                                    <col width="96%">
-                                    <tr>
-                                        <th></th>
-                                        <th><spring:message code="rest.restmockresponse.column.xpath"/></th>
-                                    </tr>
-                                    <c:forEach items="${restMockResponse.xpathExpressions}" var="xpathExpression" varStatus="loopStatus">
-                                        <tr class="even">
-                                            <c:set var = "xpathId" value = "${UUID.randomUUID().toString()}"/>
-                                            <td hidden="hidden"><c:out value = "${xpathId}"/></td>
-                                            <td><div class="delete" onclick="removeXpath('${xpathId}')"></div></td>
-                                            <td><input name="xpathExpressions[${loopStatus.index}].expression" id="xpathExpressions[${loopStatus.index}].expression" value="${xpathExpression.expression}" type="hidden" />${xpathExpression.expression}</td>
+                                    <thead>
+                                        <tr>
+                                            <th class="col-narrow"></th>
+                                            <th><spring:message code="rest.restmockresponse.column.xpath"/></th>
                                         </tr>
-                                    </c:forEach>
+                                    </thead>
+                                    <tbody>
+                                        <c:forEach items="${restMockResponse.xpathExpressions}" var="xpathExpression" varStatus="loopStatus">
+                                            <tr class="even">
+                                                <c:set var = "xpathId" value = "${UUID.randomUUID().toString()}"/>
+                                                <td hidden="hidden"><c:out value = "${xpathId}"/></td>
+                                                <td><div class="delete" onclick="removeXpath('${xpathId}')"></div></td>
+                                                <td><input name="xpathExpressions[${loopStatus.index}].expression" id="xpathExpressions[${loopStatus.index}].expression" value="${xpathExpression.expression}" type="hidden" />${xpathExpression.expression}</td>
+                                            </tr>
+                                        </c:forEach>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -259,20 +260,22 @@
 
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover sortable" id="jsonPathTable">
-                                    <col width="4%">
-                                    <col width="96%">
-                                    <tr>
-                                        <th></th>
-                                        <th><spring:message code="rest.restmockresponse.column.jsonpath"/></th>
-                                    </tr>
-                                    <c:forEach items="${restMockResponse.jsonPathExpressions}" var="jsonPathExpression" varStatus="loopStatus">
-                                        <tr class="even">
-                                            <c:set var = "jsonPathId" value = "${UUID.randomUUID().toString()}"/>
-                                            <td hidden="hidden"><c:out value = "${jsonPathId}"/></td>
-                                            <td><div class="delete" onclick="removeJsonPath('${jsonPathId}')"></div></td>
-                                            <td><input name="jsonPathExpressions[${loopStatus.index}].expression" id="jsonPathExpressions[${loopStatus.index}].expression" value="${jsonPathExpression.expression}" type="hidden" />${jsonPathExpression.expression}</td>
+                                    <thead>
+                                        <tr>
+                                            <th class="col-narrow"></th>
+                                            <th><spring:message code="rest.restmockresponse.column.jsonpath"/></th>
                                         </tr>
-                                    </c:forEach>
+                                    </thead>
+                                    <tbody>
+                                        <c:forEach items="${restMockResponse.jsonPathExpressions}" var="jsonPathExpression" varStatus="loopStatus">
+                                            <tr class="even">
+                                                <c:set var = "jsonPathId" value = "${UUID.randomUUID().toString()}"/>
+                                                <td hidden="hidden"><c:out value = "${jsonPathId}"/></td>
+                                                <td><div class="delete" onclick="removeJsonPath('${jsonPathId}')"></div></td>
+                                                <td><input name="jsonPathExpressions[${loopStatus.index}].expression" id="jsonPathExpressions[${loopStatus.index}].expression" value="${jsonPathExpression.expression}" type="hidden" />${jsonPathExpression.expression}</td>
+                                            </tr>
+                                        </c:forEach>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -310,32 +313,30 @@
 
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover sortable" id="headerQueryTable">
-                                    <col width="5%">
-                                    <col width="32.5%">
-                                    <col width="32.5%">
-                                    <col width="10%">
-                                    <col width="10%">
-                                    <col width="10%">
-                                    <tr>
-                                        <th></th>
-                                        <th><spring:message code="rest.restmockresponse.column.header"/></th>
-                                        <th><spring:message code="rest.restmockresponse.column.query"/></th>
-                                        <th><spring:message code="rest.restmockresponse.column.matchany"/></th>
-                                        <th><spring:message code="rest.restmockresponse.column.matchcase"/></th>
-                                        <th><spring:message code="rest.restmockresponse.column.matchregex"/></th>
-                                    </tr>
-                                    <c:forEach items="${restMockResponse.headerQueries}" var="headerQuery" varStatus="loopStatus">
-                                        <tr class="even">
-                                            <c:set var = "headerQueryId" value = "${UUID.randomUUID().toString()}"/>
-                                            <td hidden="hidden"><c:out value = "${headerQueryId}"/></td>
-                                            <td><div class="delete" onclick="removeHeaderQuery('${headerQueryId}')"></div></td>
-                                            <td><input name="headerQueries[${loopStatus.index}].header" id="headerQueries[${loopStatus.index}].header" value="${headerQuery.header}" type="hidden" />${headerQuery.header}</td>
-                                            <td><input name="headerQueries[${loopStatus.index}].query" id="headerQueries[${loopStatus.index}].query" value="${headerQuery.query}" type="hidden"/>${headerQuery.query}</td>
-                                            <td><input name="headerQueries[${loopStatus.index}].matchAny" id="headerQueries[${loopStatus.index}].matchAny" value="${headerQuery.matchAny}" type="hidden"/>${headerQuery.matchAny}</td>
-                                            <td><input name="headerQueries[${loopStatus.index}].matchCase" id="headerQueries[${loopStatus.index}].matchCase" value="${headerQuery.matchCase}" type="hidden"/>${headerQuery.matchCase}</td>
-                                            <td><input name="headerQueries[${loopStatus.index}].matchRegex" id="headerQueries[${loopStatus.index}].matchRegex" value="${headerQuery.matchRegex}" type="hidden"/>${headerQuery.matchRegex}</td>
+                                    <thead>
+                                        <tr>
+                                            <th class="col-narrow"></th>
+                                            <th style="width:32.5%"><spring:message code="rest.restmockresponse.column.header"/></th>
+                                            <th style="width:32.5%"><spring:message code="rest.restmockresponse.column.query"/></th>
+                                            <th style="width:10%"><spring:message code="rest.restmockresponse.column.matchany"/></th>
+                                            <th style="width:10%"><spring:message code="rest.restmockresponse.column.matchcase"/></th>
+                                            <th style="width:10%"><spring:message code="rest.restmockresponse.column.matchregex"/></th>
                                         </tr>
-                                    </c:forEach>
+                                    </thead>
+                                    <tbody>
+                                        <c:forEach items="${restMockResponse.headerQueries}" var="headerQuery" varStatus="loopStatus">
+                                            <tr class="even">
+                                                <c:set var = "headerQueryId" value = "${UUID.randomUUID().toString()}"/>
+                                                <td hidden="hidden"><c:out value = "${headerQueryId}"/></td>
+                                                <td><div class="delete" onclick="removeHeaderQuery('${headerQueryId}')"></div></td>
+                                                <td><input name="headerQueries[${loopStatus.index}].header" id="headerQueries[${loopStatus.index}].header" value="${headerQuery.header}" type="hidden" />${headerQuery.header}</td>
+                                                <td><input name="headerQueries[${loopStatus.index}].query" id="headerQueries[${loopStatus.index}].query" value="${headerQuery.query}" type="hidden"/>${headerQuery.query}</td>
+                                                <td><input name="headerQueries[${loopStatus.index}].matchAny" id="headerQueries[${loopStatus.index}].matchAny" value="${headerQuery.matchAny}" type="hidden"/>${headerQuery.matchAny}</td>
+                                                <td><input name="headerQueries[${loopStatus.index}].matchCase" id="headerQueries[${loopStatus.index}].matchCase" value="${headerQuery.matchCase}" type="hidden"/>${headerQuery.matchCase}</td>
+                                                <td><input name="headerQueries[${loopStatus.index}].matchRegex" id="headerQueries[${loopStatus.index}].matchRegex" value="${headerQuery.matchRegex}" type="hidden"/>${headerQuery.matchRegex}</td>
+                                            </tr>
+                                        </c:forEach>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
