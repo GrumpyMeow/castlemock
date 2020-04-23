@@ -193,10 +193,10 @@
                                             </tr>
                                             <c:forEach items="${restMockResponse.parameterQueries}" var="parameterQuery" varStatus="loopStatus">
                                                 <tr class="even">
-                                                    <c:set var = "parameterQueryId" value = "${UUID.randomUUID().toString()}"/>
-                                                    <td hidden="hidden"><c:out value = "${parameterQueryId}"/></td>
+                                                    <c:set var="parameterQueryId" value="${UUID.randomUUID().toString()}"/>
+                                                    <td hidden="hidden"><c:out value="${parameterQueryId}"/></td>
                                                     <td><div class="delete" onclick="removeParameterQuery('${parameterQueryId}')"></div></td>
-                                                    <td><input name="parameterQueries[${loopStatus.index}].header" id="parameterQueries[${loopStatus.index}].header" value="${parameterQuery.parameter}" type="hidden" />${parameterQuery.parameter}</td>
+                                                    <td><input name="parameterQueries[${loopStatus.index}].parameter" id="parameterQueries[${loopStatus.index}].header" value="${parameterQuery.parameter}" type="hidden" />${parameterQuery.parameter}</td>
                                                     <td><input name="parameterQueries[${loopStatus.index}].query" id="parameterQueries[${loopStatus.index}].query" value="${parameterQuery.query}" type="hidden"/>${parameterQuery.query}</td>
                                                     <td><input name="parameterQueries[${loopStatus.index}].matchAny" id="parameterQueries[${loopStatus.index}].matchAny" value="${parameterQuery.matchAny}" type="hidden"/>${parameterQuery.matchAny}</td>
                                                     <td><input name="parameterQueries[${loopStatus.index}].matchCase" id="parameterQueries[${loopStatus.index}].matchCase" value="${parameterQuery.matchCase}" type="hidden"/>${parameterQuery.matchCase}</td>
@@ -233,8 +233,8 @@
                                     </tr>
                                     <c:forEach items="${restMockResponse.xpathExpressions}" var="xpathExpression" varStatus="loopStatus">
                                         <tr class="even">
-                                            <c:set var = "xpathId" value = "${UUID.randomUUID().toString()}"/>
-                                            <td hidden="hidden"><c:out value = "${xpathId}"/></td>
+                                            <c:set var="xpathId" value="${UUID.randomUUID().toString()}"/>
+                                            <td hidden="hidden"><c:out value="${xpathId}"/></td>
                                             <td><div class="delete" onclick="removeXpath('${xpathId}')"></div></td>
                                             <td><input name="xpathExpressions[${loopStatus.index}].expression" id="xpathExpressions[${loopStatus.index}].expression" value="${xpathExpression.expression}" type="hidden" />${xpathExpression.expression}</td>
                                         </tr>
@@ -267,8 +267,8 @@
                                     </tr>
                                     <c:forEach items="${restMockResponse.jsonPathExpressions}" var="jsonPathExpression" varStatus="loopStatus">
                                         <tr class="even">
-                                            <c:set var = "jsonPathId" value = "${UUID.randomUUID().toString()}"/>
-                                            <td hidden="hidden"><c:out value = "${jsonPathId}"/></td>
+                                            <c:set var="jsonPathId" value="${UUID.randomUUID().toString()}"/>
+                                            <td hidden="hidden"><c:out value="${jsonPathId}"/></td>
                                             <td><div class="delete" onclick="removeJsonPath('${jsonPathId}')"></div></td>
                                             <td><input name="jsonPathExpressions[${loopStatus.index}].expression" id="jsonPathExpressions[${loopStatus.index}].expression" value="${jsonPathExpression.expression}" type="hidden" />${jsonPathExpression.expression}</td>
                                         </tr>
@@ -326,8 +326,8 @@
                                     </tr>
                                     <c:forEach items="${restMockResponse.headerQueries}" var="headerQuery" varStatus="loopStatus">
                                         <tr class="even">
-                                            <c:set var = "headerQueryId" value = "${UUID.randomUUID().toString()}"/>
-                                            <td hidden="hidden"><c:out value = "${headerQueryId}"/></td>
+                                            <c:set var="headerQueryId" value="${UUID.randomUUID().toString()}"/>
+                                            <td hidden="hidden"><c:out value="${headerQueryId}"/></td>
                                             <td><div class="delete" onclick="removeHeaderQuery('${headerQueryId}')"></div></td>
                                             <td><input name="headerQueries[${loopStatus.index}].header" id="headerQueries[${loopStatus.index}].header" value="${headerQuery.header}" type="hidden" />${headerQuery.header}</td>
                                             <td><input name="headerQueries[${loopStatus.index}].query" id="headerQueries[${loopStatus.index}].query" value="${headerQuery.query}" type="hidden"/>${headerQuery.query}</td>
